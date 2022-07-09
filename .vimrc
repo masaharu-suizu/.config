@@ -75,3 +75,10 @@ set statusline+=[Format=%{&fileformat}]   "改行コード
 set statusline+=[Line=%l/%L] "現在行数/全行数
 set statusline+=[Col=%c]     "列番号
 """ [End] ステータスラインに表示する内容の設定
+
+call plug#begin()
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+call plug#end()

@@ -76,6 +76,17 @@ set statusline+=[Line=%l/%L] "現在行数/全行数
 set statusline+=[Col=%c]     "列番号
 """ [End] ステータスラインに表示する内容の設定
 
+function! FormatXml()
+    let before = ">\\s\\+<"
+    let after = ">\\r<"
+    execute "%s/" .before. "/" .after. "/g
+        \| filetype indent on
+        \| setf xml
+        \| normal gg=G"
+endfunction
+command! FormatXml call FormatXml()
+
+
 call plug#begin()
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
